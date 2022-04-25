@@ -28,7 +28,8 @@ jobs:
           patch-wording: "patch,fixes" # Providing patch-wording will override commits
           # defaulting to a patch bump.
           rc-wording: "RELEASE,alpha"
-          # default: ""
+          # Don't make any change in the version if no-wording is matched
+          default: ""
 
           # default branch - in which PR has to be merged
           target-branch: "master"
