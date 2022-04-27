@@ -58,7 +58,7 @@ jobs:
           always-auth: true
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
-          # token: ${{ secrets.NPM_AUTH_TOKEN }}
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
           # scope: "@octocat"
       - name: "Install Dependencies : yarn"
         run: yarn
