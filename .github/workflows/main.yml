@@ -61,7 +61,6 @@ jobs:
           # scope: "@octocat"
       - name: "Install Dependencies"
         run: npm ci
-      - run: npm whoami
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
