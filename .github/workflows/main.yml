@@ -52,16 +52,17 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to GitHub Packages
+      # Setup .npmrc file to publish to NPM Packages
       - uses: actions/setup-node@v3
         with:
           always-auth: true
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
-          # token: ${{ secrets.NPM_AUTH_TOKEN }}
           # scope: "@octocat"
-      - name: "Install Dependencies : yarn"
-        run: yarn
-      - run: yarn publish
+      - name: "Install Dependencies : use yarn"
+        # --frozen-lockfile : uses existing yarn.lock to install dependencies
+        run: yarn --frozen-lockfile
+      - name: "Publishing to NPM Registry"
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
