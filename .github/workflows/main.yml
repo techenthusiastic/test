@@ -59,8 +59,8 @@ jobs:
           always-auth: true
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
-          # scope: "@octocat"
-      - name: "Install Dependencies : use yarn"
+          # scope: "@audio-intakes"
+      - name: "Install Dependencies : using yarn"
         # --frozen-lockfile : uses existing yarn.lock to install dependencies
         run: yarn --frozen-lockfile
       - name: "Publishing to NPM Registry"
