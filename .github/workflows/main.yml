@@ -7,7 +7,7 @@ on:
 
 jobs:
   bump-version:
-    name: "Bump Version on master"
+    name: "Bump Version on master branch"
     runs-on: ubuntu-latest
 
     steps:
@@ -45,6 +45,7 @@ jobs:
         run: echo "new tag $NEW_TAG"
 
   publish:
+    name: "Publish to NPM Registry"
     needs: bump-version
     runs-on: ubuntu-latest
     permissions:
